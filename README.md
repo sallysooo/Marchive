@@ -1,2 +1,2 @@
 # Marchive
-My Modeling Archive : study dumps w/ various model codes
+My Modeling Archive : study dump with various model codes
