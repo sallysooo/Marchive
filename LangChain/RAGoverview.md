@@ -25,5 +25,11 @@ TorchDocs-RAG/
 ├─ .env.example            # OPENAI_API_KEY=...
 ├─ requirements.txt
 └─ README.md
-
 ```
+
+- crawl.py : URL 목록을 읽어 HTML 저장(rate limit, 중복 방지)
+- transform.py : HTML에서 본문/코드만 뽑아 Markdown/Text 저장, 파일 경로로 버전/섹션 메타 부여
+- make_chunks.py : 문서 → 청킹(chunk_size, overlap) / 스니펫 추출(e.g.```python 블록)
+- build_index.py : chunks.jsonl, snippets.jsonl을 읽어 임베딩 + vectorDB 만들기
+- rag_qa.py : Q&A retriever + LLM 체인 (인용/버전 필터 지원)
+- rag_snippet.py : snippet retriever + LLM 체인 (최소 실행 예제로 재구성)
