@@ -7,7 +7,8 @@ TorchDocs-RAG/
 │  └─ processed/
 │     ├─ documents.jsonl   # 문서 메타 
 │     ├─ chunks.jsonl      # 청킹 결과 (검색 단위)
-│     └─ snippets.jsonl    # code snippet만 모은 파일
+│     ├─ snippets.jsonl    # code snippet만 모은 파일
+│     └─ embeddings.npy    # 임베딩 결과
 ├─ indexes/
 │  ├─ chroma/              # Q&A index (vectorDB)
 │  └─ snippets_chroma/     # snippet index (vectorDB)
