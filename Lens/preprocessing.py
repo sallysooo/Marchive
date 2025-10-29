@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
 Step 1
-[pcap file] -> [flow extraction] -> [anonymize] -> [hex form] -> [Tokenization]
+[pcap file] -> [flow extraction] -> [anonymize] -> [hex form] -> ([Tokenization])
 
 '''
 
@@ -283,6 +283,7 @@ def packets_to_token_sequence(packets, max_tokens=None):
         seq.append("<pkt>")
         seq.append("<head>")
         seq += hex_to_hx_tokens(p.get("header_hex", ""))
+        seq += hex_to_hx_tokens(p.get("payload_hex", ""))
         if max_tokens is not None and len(seq) >= max_tokens:
             seq = seq[:max_tokens]
             break
